@@ -275,7 +275,36 @@ func challenge12(input1: String) -> String{
 
 
 //CHALLENGE 13
-func challenge13(){
+func challenge13(input: String){
+    var result = ""
+    var count = 0
+    
+    for (index,charac) in input.enumerated(){
+        if index == 0 {
+            result.append(charac)
+        }
+        if charac != result.last {
+            result.append("\(count)")
+            count = 1
+
+            result.append("\(charac)")
+        } else {
+            count += 1
+        }
+        if index == (input.count - 1){
+            result.append("\(count)")
+        }
+        
+        
+    }
+    print(result)
+    
     
 }
+challenge13(input: "aabbaaaaAACCC")
 
+
+// CHALLENGE 14
+func challenge14(input: String){
+    
+}
