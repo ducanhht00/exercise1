@@ -301,10 +301,203 @@ func challenge13(input: String){
     
     
 }
-challenge13(input: "aabbaaaaAACCC")
+//Check Output
+//challenge13(input: "aabbaaaaAACCC")
 
 
 // CHALLENGE 14
 func challenge14(input: String){
     
 }
+
+
+
+// CHALLENGE 15
+
+
+
+// CHALLENGE 16
+func fizzBuzz(){
+    for i in 1...100{
+        var result = "\(i)"
+        if i % 3 == 0 && i % 5 == 0{
+            result = "fizzBuzz"
+        } else if i % 3 == 0 {
+            result = "fizz"
+        } else if i % 5 == 0 {
+            result = "Buzz"
+        }
+        print("\(result) ")
+    }
+}
+//Check output
+//fizzBuzz()
+
+
+// CHALLENGE 17
+func challenge17(minimum: Int, maximum: Int){
+    print(Int.random(in: minimum...maximum))
+}
+// Check Output
+//challenge17(minimum: 11, maximum: 13)
+
+
+//CHALLENGE 18
+func challenge18(number1: Int, number2: Int){
+    var result = 1
+    for _ in 1...number2{
+        result *= number1
+    }
+    print(result)
+}
+// Check Output
+//challenge18(number1: 3, number2: 4)
+
+
+// CHALLENGE 19
+func challenge19(number1: Int, number2: Int){
+    print("Number 1 : \(number1), number 2 : \(number2)")
+    var a = number1
+    var b = number2
+    a = a + b
+    b = a - b
+    a = a - b
+    print("Number 1 : \(a), number 2 : \(b)")
+    
+}
+// Check Output
+//challenge19(number1: 3, number2: 4)
+
+
+// CHALLENGE 20
+func challenge20(input : Int) -> Bool{
+    if input == 0 || input == 1 {
+        return true
+    }
+    for i in 2...(input/2){
+        if input % i == 0 {
+            return false
+        }
+    }
+    
+    return true
+}
+// Check Output
+//challenge20(input: 16777259)
+
+
+//CHALLENGE 21
+
+
+//CHALLENGE 22
+
+
+//CHALLENGE 23
+
+//CHALLENGE 24
+
+
+//CHALLENGE 25
+func challenge25(input: Int) -> Int{
+    var result = 0
+    for i in 0...input{
+        result = i * i
+        if result > input {
+            return i-1
+        }
+    }
+    return 1
+}
+challenge25(input: 5)
+
+//CHALLENGE 26
+
+
+
+
+//CHALLENGE 37
+extension Array where Element == Int{
+    func challenge37(input: String){
+        var count = 0
+        for i in self{
+            let newString = String(i)
+            for y in newString {
+                if input == "\(y)" {
+                    count += 1
+                }
+            }
+        }
+        print(count)
+    }
+}
+// Check Output
+//[55515,55,5,144555].challenge37(input: "2")
+
+
+// CHALLENGE 38
+//extension Array {
+//    func challenge38(input : Int) -> Array{
+//        if input == 0 {
+//            return []
+//        }
+//        var a = self
+//        for i in 0...self.count {
+//            for y in (i+1)...self.count{
+//                if self[i] > self[y]{
+//
+//                }
+//            }
+//        }
+//        for i in 0...(input - 1){
+//
+//        }
+//        return []
+//    }
+//}
+
+
+// CHALLENGE 39
+extension Array where Element == String{
+    func challenge39(){
+        var a = self.sorted(by: {$0.count > $1.count})
+        print(a)
+    }
+}
+// check Output
+//["a", "abc", "ab"].challenge39()
+//["paul", "taylor", "adele"].challenge39()
+
+
+//CHALLENGE 40
+func challenge40(input: [Int]) -> [Int]{
+    let checkArray = Array(1...100)
+    var result : [Int] = []
+    for i in checkArray {
+        if !input.contains(i) {
+            result.append(i)
+        }
+    }
+    return result
+}
+// Check output
+//var exampleArray = Array(1...100)
+//exampleArray.remove(at: 6)
+//exampleArray.remove(at: 19)
+//exampleArray.remove(at: 53)
+//print(challenge40(input: exampleArray))
+
+// CHALLENGE 41
+func challenge41(input: [Int]){
+    var total = 0
+    for i in input{
+        total += i
+    }
+    let result : Double?
+    if input.count == 0 {
+        result = nil
+    } else {
+        result = Double(total) / Double(input.count)
+    }
+    print(result)
+}
+challenge41(input: [])
